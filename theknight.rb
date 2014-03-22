@@ -21,6 +21,10 @@ class Character
     	puts ""
     end
 
+    #def plotPosition()
+    	#TODO: Plot position of both players somehow.
+    #end
+
     def moveUp()
     	@y += 1
 		puts "You took a step up!"
@@ -32,12 +36,12 @@ class Character
     end
 
     def moveLeft()
-    	@x -1
+    	@x -=1
     	puts "you went left"
     end
 
     def moveRight()
-    	@x +1
+    	@x +=1
     	puts "you went right"
     end
 
@@ -69,7 +73,7 @@ command = ""
 while true
 	
 	puts "Welcome to The Knight!"
-	puts "You can 'fight', 'move up', 'fend' or 'go back'"
+	puts "You can 'fight', 'move up', 'move down', 'move left' or 'move right'"
 
 	if command == "fight"
 		enemy.attack()
