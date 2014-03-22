@@ -1,3 +1,10 @@
+#The Knight.
+
+#TODO:
+#1. Make the game "turn based"
+#2. Plot the positions of the players somehow
+
+
 class Character
 	def initialize(name)
 		@name = name
@@ -51,8 +58,8 @@ class Character
 		puts "Boom, that one hurt him!"
 	end
 
-	def fendOffAttack()
-		@health -= 1 #It takes energy to fend off an attacker :)
+	def attackLoss() #It takes energy to fend off an attacker :)
+		@health -= 1 
 	end
 
 	def lowHpMsg()
@@ -76,7 +83,8 @@ while true
 	puts "You can 'fight', 'move up', 'move down', 'move left' or 'move right'"
 
 	if command == "fight"
-		enemy.attack()
+		enemy.attack() #attack your enemy
+		player.attackLoss() #you expend some HP by attacking
 	elsif command == "move up"
 		player.moveUp()
 	elsif command == "move left"
