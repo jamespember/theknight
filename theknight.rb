@@ -81,6 +81,8 @@ while true
 		player.moveUp()
 	elsif command == "move left"
 		player.moveLeft()
+	elsif command == "move down"
+		player.moveDown()	
 	elsif command == "move right"
 		player.moveRight()
 	end
