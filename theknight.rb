@@ -99,17 +99,12 @@ command = ""
 while true
 	
 	puts "Welcome to The Knight!"
-	puts "You can 'fight', 'move up', 'move down', 'move left' or 'move right'"
+	puts "You can 'attack', 'move up', 'move down', 'move left' or 'move right'"
 
-	if command == "fight"
-		if currentTurn != "James The Knight"
-			enemy.attack() 
-			player.fightEnergyLoss() 
-			player.switchTurn()	
-		else
-			puts "It's not your turn!!!!"
-		end
-
+	if command == "attack"
+		#TODO: Only allow an attack if it is your turn
+		enemy.attack() 
+		player.fightEnergyLoss() 
 	elsif command == "move up"
 		player.moveUp()
 	elsif command == "move left"
