@@ -58,13 +58,15 @@ class Character
 		puts "Boom, that one hurt him!"
 	end
 
-	def attackLoss() #It takes energy to fend off an attacker :)
+	def fightEnergyLoss() #It takes energy to fend off an attacker :)
 		@health -= 1 
 	end
 
 	def lowHpMsg()
 		puts "Uh oh, it's going low!"
 	end
+
+	#TODO: These functions are works in progress and not very good
 
 	def switchTurn()
 		puts ""
@@ -73,7 +75,15 @@ class Character
 		puts @name
 		puts "-----------"
 		puts ""
+		currentTurn() #todo: pass the current player name into the currentTurn function and update the currentTurn variable
 	end
+
+	def currentTurn()
+		currentTurn = @name
+		return currentTurn
+	end
+	
+	#These functions are works in progress and not very good
 
 end
 
@@ -92,9 +102,14 @@ while true
 	puts "You can 'fight', 'move up', 'move down', 'move left' or 'move right'"
 
 	if command == "fight"
-		enemy.attack() #attack your enemy
-		player.attackLoss() #you expend some HP by attacking
-		player.switchTurn()
+		if currentTurn != "James The Knight"
+			enemy.attack() 
+			player.fightEnergyLoss() 
+			player.switchTurn()	
+		else
+			puts "It's not your turn!!!!"
+		end
+
 	elsif command == "move up"
 		player.moveUp()
 	elsif command == "move left"
