@@ -27,19 +27,26 @@ class Character
     end
 
     def attack()
-		if #The two players are not close enough to each other
-			@health -= 1
-			puts "Boom, that one hurt him!"
-		else
-			puts "You're not close enough to attack"
-		end
+    	#TODO: The players must be at least on one of the same axis to attack.
+		@health -= 10
+		puts "Boom, that one hurt him!"
+	end
+
+	def fendOffAttack()
+		@health -= 1 #It takes energy to fend off an attacker :)
+	end
+
+	def lowHpMsg()
+		puts "Uh oh, it's going low!"
 	end
 
 end
 
+
 player = Character.new("James the Knight")
 enemy = Character.new("Robin the Foul")
 enemy.y = 2
+
 
 system "clear" or system "cls"
 
