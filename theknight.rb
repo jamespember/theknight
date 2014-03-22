@@ -66,6 +66,15 @@ class Character
 		puts "Uh oh, it's going low!"
 	end
 
+	def switchTurn()
+		puts ""
+		puts "-----------"
+		puts "The last player to play was: "
+		puts @name
+		puts "-----------"
+		puts ""
+	end
+
 end
 
 
@@ -85,6 +94,7 @@ while true
 	if command == "fight"
 		enemy.attack() #attack your enemy
 		player.attackLoss() #you expend some HP by attacking
+		player.switchTurn()
 	elsif command == "move up"
 		player.moveUp()
 	elsif command == "move left"
