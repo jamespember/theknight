@@ -1,7 +1,7 @@
 class Character
 	def initialize(name)
 		@name = name
-        @x = 0
+        @x = 1
         @y = 1
         @health = 100
     end
@@ -24,6 +24,21 @@ class Character
     def moveUp()
     	@y += 1
 		puts "You took a step up!"
+    end
+
+    def moveDown()
+    	@y -= 1
+    	puts "You took a step down"
+    end
+
+    def moveLeft()
+    	@x -1
+    	puts "you went left"
+    end
+
+    def moveRight()
+    	@x +1
+    	puts "you went right"
     end
 
     def attack()
@@ -52,10 +67,18 @@ system "clear" or system "cls"
 
 command = ""
 while true
+	
+	puts "Welcome to The Knight!"
+	puts "You can 'fight', 'move up', 'fend' or 'go back'"
+
 	if command == "fight"
 		enemy.attack()
 	elsif command == "move up"
 		player.moveUp()
+	elsif command == "move left"
+		player.moveLeft()
+	elsif command == "move right"
+		player.moveRight()
 	end
 
 	player.printStatus()
